@@ -1,0 +1,10 @@
+This is another line with 1234 456 numbers.
+
+tr means "translation" in shell. It can do substituion or deletion of
+selected characters.
+
+examples:
+
+A. cat test.txt | tr "[:lower:]" "[:upper:]" -> turn lower case to upper case
+B. tr -cs "[:alnum:]" "\n" < test.txt -> create a list of words or numbers 
+in test.txt, one per line. 
