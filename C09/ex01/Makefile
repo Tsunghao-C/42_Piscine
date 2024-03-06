@@ -12,15 +12,15 @@
 
 NAME = libft.a
 
-SRCS = ./srcs/ft_putchar.c \
-       ./srcs/ft_swap.c \
-       ./srcs/ft_putstr.c \
-       ./srcs/ft_strlen.c \
-       ./srcs/ft_strcmp.c
+SRCS = srcs/ft_putchar.c \
+       srcs/ft_swap.c \
+       srcs/ft_putstr.c \
+       srcs/ft_strlen.c \
+       srcs/ft_strcmp.c
 
 OBJS = $(SRCS:.c=.o)
 
-HEAD = /includes/ft.h
+HEAD = includes/ft.h
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEAD)
+	$(CC) $(CFLAGS) -c $< -o $@ -I$(dir $(HEAD))
 
 clean:
 	rm -f $(OBJS)
