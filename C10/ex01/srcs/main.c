@@ -2,8 +2,8 @@
 
 int	main(int ac, char *av[])
 {
-	int	i;
-	int	fd_out;
+	int		i;
+	int		fd_out;
 	char	buff[BUFF];
 
 	i = 0;
@@ -15,8 +15,8 @@ int	main(int ac, char *av[])
 	{
 		if (ft_strcmp(av[i], "-") == 0)
 			ft_rw(av[0], buff, fd_out);
-		else if (ft_strcmp(av[1], ">") == 0)
-			break;
+		else if (ft_strcmp(av[i], ">") == 0)
+			break ;
 		else
 			ft_orwc(av[0], av[i], buff, fd_out);
 	}
