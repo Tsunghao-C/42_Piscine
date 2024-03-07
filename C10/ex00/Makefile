@@ -12,9 +12,8 @@
 
 NAME = ft_display_file
 
-SRCS = srcs/ft_putstr.c \
-       srcs/main.c \
-       srcs/ft_read_n_dsp.c
+SRCS = srcs/ft_read_n_dsp.c \
+       srcs/main.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -17,7 +17,6 @@
 # include <fcntl.h>
 # define BUFF_SIZE 1024
 
-void	ft_putstr(char *str);
 void	ft_read_n_dsp(int fd);
 
 #endif
