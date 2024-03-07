@@ -10,3 +10,12 @@ void	ft_print_err(char *p_name, char *av_name, int err)
 	write(1, "\n", 1);
 	return ;
 }
+
+void	ft_print_err2(char *p_name, int err)
+{
+	ft_putstr(p_name);
+	write(1, ": ", 2);
+	ft_putstr(strerror(err));
+	write(1, "\n", 1);
+	return ;
+}

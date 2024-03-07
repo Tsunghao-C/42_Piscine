@@ -15,7 +15,6 @@ NAME = ft_cat
 SRCS = srcs/ft_putstr.c \
        srcs/ft_orwc.c \
        srcs/ft_set_fd_out.c \
-       srcs/ft_strlen.c \
        srcs/ft_print_err.c \
        srcs/ft_rw.c \
        srcs/ft_strcmp.c \

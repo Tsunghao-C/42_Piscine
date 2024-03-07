@@ -24,7 +24,7 @@ void	ft_putstr(char *str);
 void	ft_rw(char *p_name, char *buff, int fd_out);
 void	ft_orwc(char *p_name, char *path, char *buff, int fd_out);
 void    ft_print_err(char *p_name, char *av_name, int err);
-int	ft_strlen(char *str);
+void    ft_print_err2(char *p_name, int err);
 int     ft_strcmp(char *s1, char *s2);
 int     ft_set_fd_out(int ac, char *av[]);
 
