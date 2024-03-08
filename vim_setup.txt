@@ -1,0 +1,108 @@
+- Insertion mode
+
+i -> insert before letter
+I -> insert at the beginning line
+a -> append after letter
+A -> append at the end of line
+o -> open a new line after current line
+O -> open a new line before current line
+Something: This is a test of fucitonality.
+
+- Replacing, Changing and Word Movement
+
+r -> replace a single character
+R -> Replace all following charaters until you stop it.
+w -> skip to next word
+W -> skip to next WORD(including including symboles)
+e -> move to end of a word
+E -> move to end of a WORD
+c -> change whtater we specify (with 'e' or with 'E')
+C -> change to the end of line
+ex. I want to test again the replace mode.
+
+- Deletetion
+
+x -> delete signle charater
+X -> delete character before the cursor
+d -> delete whatever we specify (with 'e' or 'E') (And cuts it)
+D -> delete to the end of line (And cuts it)
+some thing try to delete
+
+- Yanking, Cutting, and Pasting
+
+y -> 'Yank' to the specified modifier
+Y -> 'Yank' the current line
+p -> paste the contents after the cursor
+P -> paste the contents before the cursor
+d -> 
+this is something i'd like to yang to.
+
+- Count Modifiers and skipping lines
+
+h -> move left
+j -> move down
+k -> move up
+l -> move right
+'3k' -> mean move up by 3 lines
+'6l' -> means move write by 6 characters
+'d2W' -> delete next 2 WORDs
+'yy' -> copy entire line
+'dd' -> delete entire line
+'d14d -> delete the next 14 lines
+G -> move to the begining of the last line
+gg -> move to the begining of the document
+'ggy17G' -> copy from begnning to Line 17
+'y31G' -> copy from Line 31 to the end
+'42G' -> move to Line 42
+'yy10p' copy current line and paste 10 times
+
+- Searching and Replacing
+
+type '/' and key the word to search forward
+type '?' and key to word to search backward
+n -> move to next search result
+N -> move to previous search result
+': 1,4s/target/replacementy/g' -> look between Line and 4, search target and replace by replacement. The g flag mean replace everything found
+': %s/target/replacement/g' -> look for the whole document to search and replace
+
+This is ecole 42
+This is 42 paris 
+There is no 42 school in Taiwan
+42 424424 424
+
+- Using Windows and Tabs
+
+':tabnew' -> create a new tab
+':tabp' -> switch to previous tab
+':split' -> split the window
+'^w s' -> also split the window
+'^w v' -> split verticly
+
+- Marking a Files
+
+m -> set a marker (ex R) to a line to navigate, key 'R to locate.
+
+- Coding Syntax
+
+% -> jump to matching bracket
+> -> indent
+< -> de-indent
+'4>' -> intdent the following 4 Lines
+== -> Properly indent
+'gg=G' -> Proper indent the whole document
+~ -> change the case of character
+'>%' -> indent the whole bracket
+
+- Colon Setting
+
+':set nu' -> set numbers
+':set rnu' -> set relative numbers
+':nu' -> show current Line number
+':set autoindent' -> auto indentation
+':set colorcolumn=X' -> Draw a column of X characters
+':set ruler' -> show position info
+':set nohlsearch' -> disable search HL
+':set bg=dark/light' -> change foreground
+':set tabstop=X' -> set tab equals to X spaces
+':colo <theme>' -> set a theme
+
