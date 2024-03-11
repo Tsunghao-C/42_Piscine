@@ -19,13 +19,16 @@
 # include <string.h>
 # include <errno.h>
 # define BUFF 30720
+# define ER STDERR_FILENO
+# define P_NAME "ft_cat"
 
 void	ft_putstr(char *str);
-void	ft_rw(char *p_name, char *buff, int fd_out);
-void	ft_orwc(char *p_name, char *path, char *buff, int fd_out);
-void    ft_print_err(char *p_name, char *av_name, int err);
-void    ft_print_err2(char *p_name, int err);
-int     ft_strcmp(char *s1, char *s2);
-int     ft_set_fd_out(int ac, char *av[]);
+void	ft_putstr_err(char *str);
+void	ft_rw(char *buff, int fd_out, int fd_in);
+void	ft_orwc(char *path, char *buff, int fd_out);
+void	ft_print_err(char *av_name, int err);
+void	ft_print_err2(int err);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_set_fd_out(int ac, char *av[]);
 
 #endif

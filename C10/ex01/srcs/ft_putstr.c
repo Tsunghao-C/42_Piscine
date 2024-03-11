@@ -10,17 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft.h"
 
 void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
 }
-/*
-int	main(void)
+
+void	ft_putstr_err(char *str)
 {
-	ft_putstr("ABCDE");
-	return (0);
+	while (*str)
+		write(ER, str++, 1);
 }
-*/

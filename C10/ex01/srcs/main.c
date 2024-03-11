@@ -10,15 +10,15 @@ int	main(int ac, char *av[])
 	fd_out = ft_set_fd_out(ac, av);
 	buff[0] = '\0';
 	if (ac == 1 || ft_strcmp(av[1], ">") == 0)
-		ft_rw(av[0], buff, fd_out);
+		ft_rw(buff, fd_out, STDIN_FILENO);
 	while (++i < ac)
 	{
 		if (ft_strcmp(av[i], "-") == 0)
-			ft_rw(av[0], buff, fd_out);
+			ft_rw(buff, fd_out, STDIN_FILENO);
 		else if (ft_strcmp(av[i], ">") == 0)
 			break ;
 		else
-			ft_orwc(av[0], av[i], buff, fd_out);
+			ft_orwc(av[i], buff, fd_out);
 	}
 	close(fd_out);
 	return (0);

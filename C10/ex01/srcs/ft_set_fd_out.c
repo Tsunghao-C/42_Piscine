@@ -14,8 +14,7 @@ int	ft_set_fd_out(int ac, char *av[])
 			fd_out = open(av[i + 1], O_WRONLY | O_CREAT, 0777);
 			if (fd_out == -1)
 			{
-				ft_putstr(strerror(errno));
-				write(1, "\n", 1);
+				ft_print_err(av[i + 1], errno);
 				return (0);
 			}
 		}
