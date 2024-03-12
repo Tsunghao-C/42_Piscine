@@ -1,18 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tsuchen <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 16:55:11 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/02/27 19:51:16 by tsuchen          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 
+int	ft_any(char **tab, int(*f)(char *))
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		if (f(tab[i]) < 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+/*
 int	is_sep(char c, char *charset)
 {
 	int	i;
@@ -100,7 +102,18 @@ char	**ft_split(char *str, char *charset)
 	output[i] = 0;
 	return (output);
 }
-/*
+
+int	is_comma(char *str)
+{
+	while (*str)
+	{
+		if (*str == ',')
+			return (-1);
+		str++;
+	}
+	return (1);
+}
+
 int	ft_arr_len(char **arr)
 {
 	int	i = 0;
@@ -110,23 +123,26 @@ int	ft_arr_len(char **arr)
 	return (i);
 }
 
-int	main(void)
+int	main(int ac, char *av[])
 {
-	char	*str = "215askdljfh1234566adjf3215321asdf321a2a2a25aa5ads";
-	char	*charset = "0123456789ab";
-	char	**output;
-	int		arr_len;
+	char	**tab;
+	int	any;
+	int	i;
 
-	output = ft_split(str, charset);
-	arr_len = ft_arr_len(output);
-	printf("Original str : %s\n", str);
-	printf("Separator str: %s\n", charset);
-	printf("arr_len: %d\n", arr_len);
-	for (int i = 0; i < arr_len; i++)
-		printf("Split str %d is: %s\n", i, output[i]);
-	//free memory
-	for (int j = 0; j < arr_len; j++)
-		free(output[j]);
-	free(output);
+	if (ac != 3)
+		return (0);
+	i = 0;
+	tab = ft_split(av[1], av[2]);
+	any = ft_any(tab, &is_comma);
+	if (any == 1)
+		write(1, "1\n", 2);
+	else
+		write(1, "0\n", 2);
+	while (i < ft_arr_len(tab))
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 	return (0);
 }*/
