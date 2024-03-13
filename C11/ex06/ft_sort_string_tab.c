@@ -68,10 +68,14 @@ int	main(void)
 /*
 char	**t = {"abs", "cat"};
 level	|  chars of str_0 |  chars of str_1 | str_0 | str_1 |  arr  |
-val_ptr | t00 | t01 | t02 | t10 | t11 | t12 |  t[0] |  t[1] |   t   |
+---------------------------------------------------------------------
+variable| t00 | t01 | t02 | t10 | t11 | t12 |  t[0] |  t[1] |   t   |
+---------------------------------------------------------------------
 value	|  a  |  b  |  s  |  c  |  a  |  t  |  0x0  |  0x3  |  0x6  |
 address	| 0x0 | 0x1 | 0x2 | 0x3 | 0x4 | 0x5 |  0x6  |  0x7  |  0x8  |
+---------------------------------------------------------------------
 add_ptr	|&t00 |&t01 |&t02 |&t10 |&t11 |&t12 | &t[0] | &t[1] |  &t   |
-tab[i] =  *(tab + i) = add of first character -> 0x0
-&tab[i] = the mem address that saves tab[i] -> 0x6
+						^
+tab[0] = *(tab + 0): the mem address of first character -> 0x0
+&tab[0]		   : the mem address that saves tab[i] -> 0x6
 */
