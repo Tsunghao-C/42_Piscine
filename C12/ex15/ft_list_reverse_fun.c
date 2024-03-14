@@ -1,39 +1,33 @@
 #include "ft_list.h"
 #include <stdio.h>
 
-t_list	*ft_list_last(t_list *begin_list)
+void	ft_swap_data(t_list *list_1, t_list *list_2)
 {
-	t_list	*last;
+	void	*temp;
 
-	last = begin_list;
-	while (last != NULL)
-	{
-		if ((*last).next == NULL)
-			return (last);
-		last = (*last).next;
-	}
-	return (last);
+	temp = list_1->data;
+	list_1->data = list_2->data;
+	list_2->data = temp;
 }
 
-void	ft_list_reverse(t_list **begin_list)
+void	ft_list_reverse_fun(t_list *begin_list)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
+	t_list	*tmp3;
 
-	tmp1 = *begin_list;
-	*begin_list = ft_list_last(*begin_list);
-	while (tmp1->next)
+	tmp1 = begin_list;
+	tmp3 = NULL;
+	while (tmp1 != tmp3)
 	{
 		tmp2 = tmp1;
-		while (tmp2)
-		{
-			if ((tmp2->next)->next == NULL)
-			{
-				(tmp2->next)->next = tmp2;
-				tmp2->next = NULL;
-			}
+		while (tmp2->next != tmp3)
 			tmp2 = tmp2->next;
-		}
+		if (tmp1 == tmp2)
+			break ;
+		ft_swap_data(tmp1, tmp2);
+		tmp3 = tmp2;
+		tmp1 = tmp1->next;
 	}
 }
 /*
@@ -59,7 +53,7 @@ int	main(void)
 		tmp1 = tmp1->next;
 	}
 	printf("==>  reversed list  <==\n");
-	ft_list_reverse(&lst);
+	ft_list_reverse_fun(lst);
 	tmp2 = lst;
 	for (int k = 0; k < 4; k++)
 	{
