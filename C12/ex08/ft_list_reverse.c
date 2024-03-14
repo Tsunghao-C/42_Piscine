@@ -31,6 +31,43 @@ void	ft_list_reverse(t_list **begin_list)
 	}
 }
 /*
+//method 2, swap pointer
+t_list	*ft_list_last(t_list *begin_list)
+{
+	t_list	*last;
+
+	last = begin_list;
+	while (last != NULL)
+	{
+		if ((*last).next == NULL)
+			return (last);
+		last = (*last).next;
+	}
+	return (last);
+}
+
+void	ft_list_reverse(t_list **begin_list)
+{
+	t_list	*tmp1;
+	t_list	*tmp2;
+
+	tmp1 = *begin_list;
+	*begin_list = ft_list_last(*begin_list);
+	while (tmp1->next)
+	{
+		tmp2 = tmp1;
+		while (tmp2)
+		{
+			if ((tmp2->next)->next == NULL)
+			{
+				(tmp2->next)->next = tmp2;
+				tmp2->next = NULL;
+			}
+			tmp2 = tmp2->next;
+		}
+	}
+}
+
 t_list	*ft_create_elem(void *data);
 void	ft_list_push_back(t_list **begin_list, void *data);
 
