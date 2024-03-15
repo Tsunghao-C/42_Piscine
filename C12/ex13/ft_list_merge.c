@@ -11,7 +11,6 @@ void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 	tmp->next = begin_list2;
 }
 /*
-t_list	*ft_create_elem(void *data);
 void	ft_list_push_back(t_list **begin_list, void *data);
 void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *));
 void    free_data(void  *addr);

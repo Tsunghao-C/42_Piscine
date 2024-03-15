@@ -43,7 +43,6 @@ int	ft_strcmp(void *str1, void *str2)
 	return (*s1 - *s2);
 }
 
-t_list	*ft_create_elem(void *data);
 void	ft_list_push_back(t_list **begin_list, void *data);
 void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *));
 void    free_data(void  *addr);

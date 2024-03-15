@@ -15,7 +15,6 @@ t_list	*ft_list_last(t_list *begin_list)
 	return (last);
 }
 /*
-t_list  *ft_create_elem(void *data);
 void    ft_list_push_front(t_list **begin_list, void *data);
 
 int	main(void)

@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 t_list	*ft_list_find(t_list *begin_list, void *data_ref, int
-	(*cmp)(void *, void *))
+(*cmp)(void *, void *))
 {
 	t_list	*tmp;
 
@@ -28,7 +28,6 @@ int	cmp_mod(void *lst_data, void *data_ref)
 	return (1);
 }
 
-t_list	*ft_create_elem(void *data);
 void	ft_list_push_back(t_list **begin_list, void *data);
 void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *));
 void    free_data(void  *addr);

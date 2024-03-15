@@ -17,7 +17,6 @@ t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 	return (tmp);
 }
 /*
-t_list	*ft_create_elem(void *data);
 void	ft_list_push_back(t_list **begin_list, void *data);
 
 int	main(int ac, char *av[])

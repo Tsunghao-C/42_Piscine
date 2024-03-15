@@ -21,7 +21,6 @@ void	ft_list_data_double(void *lst_data)
 	*ptr = *ptr * 2;
 }
 
-t_list	*ft_create_elem(void *data);
 void	ft_list_push_back(t_list **begin_list, void *data);
 
 int	main(void)

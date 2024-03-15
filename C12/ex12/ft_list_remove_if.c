@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 t_list	*ft_list_find(t_list *begin_list, void *data_ref, int
-	(*cmp)(void *, void *))
+(*cmp)(void *, void *))
 {
 	t_list	*tmp;
 
@@ -17,7 +17,7 @@ t_list	*ft_list_find(t_list *begin_list, void *data_ref, int
 }
 
 t_list	*ft_list_remove_if(t_list **begin_list, void *data_ref, int
-	(*cmp)(void *, void *), void (*free_fct)(void *))
+(*cmp)(void *, void *), void (*free_fct)(void *))
 {
 	t_list	*tmp;
 	t_list	*tmp2;
