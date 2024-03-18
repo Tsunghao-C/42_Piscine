@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/18 11:25:24 by tsuchen           #+#    #+#             */
+/*   Updated: 2024/03/18 11:26:22 by tsuchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_list.h"
 #include <stdio.h>
 
@@ -13,7 +25,7 @@ void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
 		free(tmp);
 	}
 }
-
+/*
 void	free_data(void	*addr)
 {
 	t_list	*tmp;
@@ -22,10 +34,8 @@ void	free_data(void	*addr)
 	tmp->data = NULL;
 	tmp->next = NULL;
 }
-/*
+
 void	ft_list_push_back(t_list **begin_list, void *data);
-t_list	*ft_create_elem(void *data);
-	
 int	main(void)
 {
 	t_list	*begin_list;

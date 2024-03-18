@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sorted_list_insert.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/18 11:36:32 by tsuchen           #+#    #+#             */
+/*   Updated: 2024/03/18 11:40:55 by tsuchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_list.h"
 #include <stdio.h>
-
-t_list	*ft_create_elem(void *data);
 
 void	ft_sorted_list_insert(t_list **begin_list, void *data, int
 (*cmp)(void *, void *))
@@ -10,8 +20,10 @@ void	ft_sorted_list_insert(t_list **begin_list, void *data, int
 	t_list	*new_list;
 
 	new_list = ft_create_elem(data);
+	if (!new_list)
+		return ;
 	tmp = *begin_list;
-	if (cmp(tmp, data) > 0)
+	if (cmp(tmp->data, data) > 0)
 	{
 		*begin_list = new_list;
 		new_list->next = tmp;
