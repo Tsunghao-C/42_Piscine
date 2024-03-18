@@ -14,13 +14,14 @@ len_base_2=${#base2}
 len_base_3=${#base3}
 len1=${#nb1}
 len2=${#nb2}
-# Create a function that return the index in a given base
+# Create a function that returns the index in a given base
 get_char_index(){
 	str="$1"
 	tar_char="$2"
+	base_len="$3"
 	index=-1
 	ind=0
-	while [ $ind -lt $len_base_1 ]; do
+	while [ $ind -lt $base_len ]; do
 		curr_char="${str:ind:1}"
 		if [ "$curr_char" = "$tar_char" ]; then
 			index=$ind
@@ -36,7 +37,7 @@ i=0
 dec_n1=0
 while [ $i -lt $len1 ]; do
 	char="${nb1:i:1}"
-	base_ind=$(get_char_index "$base1" "$char")
+	base_ind=$(get_char_index "$base1" "$char" "$len_base_1")
 	dec_n1=$(echo "$dec_n1 * $len_base_1 + $base_ind" | bc)
 	#echo "dec_n1 in $i is $dec_n1, char: $char, base_ind: $base_ind"
 	((i++))
@@ -46,7 +47,7 @@ j=0
 dec_n2=0
 while [ $j -lt $len2 ]; do
 	char="${nb2:j:1}"
-	base_ind=$(get_char_index "$base2" "$char")
+	base_ind=$(get_char_index "$base2" "$char" "$len_base_2")
 	dec_n2=$(echo "$dec_n2 * $len_base_2 + $base_ind" | bc)
 	#echo "dec_n2 in $j is $dec_n2, char: $char, base_ind: $base_ind"
 	((j++))
