@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   btree_apply_by_level_comments.c                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/18 11:57:04 by tsuchen           #+#    #+#             */
+/*   Updated: 2024/03/18 12:02:27 by Hao              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_btree.h"
 #include <stdlib.h>
 
@@ -29,7 +41,7 @@ void	ft_enqueue(t_list **begin_list, t_btree *root)
 	// set current_level
 	new_lst->current_level = (*begin_list)->current_level + 1;
 	// set is_first
-	if (new_lst->current_level > tmp->current_level) 
+	if (new_lst->current_level > tmp->current_level)
 		new_lst->is_first = 1;
 	else
 		new_lst->is_first = 0;
@@ -41,7 +53,7 @@ void	ft_dequeue(t_list **begin_list)
 
 	tmp = *begin_list;
 	if (*begin_list == NULL)
-		return;
+		return ;
 	*begin_list = (*begin_list)->next;
 	free(tmp);
 }
@@ -78,7 +90,7 @@ void	btree_apply_by_level(t_btree *root, void
 	que->is_first = 1;
 	ft_scan_over_queue(&que, applyf);
 }
-
+/*
 #include <stdio.h>
 void	ft_print_item(void *ad)
 {
@@ -134,7 +146,7 @@ int	main(void)
 	printf("==>  BFS by-level  <==\n");
 	btree_apply_by_level(bt_r, &ft_print_item2);
 	return (0);
-}
+}*/
 /*		   -----
 		   | 1 |
 		   -----

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   btree_apply_by_level.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/18 11:56:49 by tsuchen           #+#    #+#             */
+/*   Updated: 2024/03/18 12:00:46 by Hao              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_btree.h"
 #include <stdlib.h>
 
@@ -26,7 +38,7 @@ void	ft_enqueue(t_list **begin_list, t_btree *root)
 		tmp = tmp->next;
 	tmp->next = new_lst;
 	new_lst->current_level = (*begin_list)->current_level + 1;
-	if (new_lst->current_level > tmp->current_level) 
+	if (new_lst->current_level > tmp->current_level)
 		new_lst->is_first = 1;
 	else
 		new_lst->is_first = 0;
@@ -38,7 +50,7 @@ void	ft_dequeue(t_list **begin_list)
 
 	tmp = *begin_list;
 	if (*begin_list == NULL)
-		return;
+		return ;
 	*begin_list = (*begin_list)->next;
 	free(tmp);
 }
