@@ -6,7 +6,7 @@
 /*   By: tsuchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:55:11 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/02/27 19:51:16 by tsuchen          ###   ########.fr       */
+/*   Updated: 2024/03/18 11:17:33 by tsuchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ char	**ft_split(char *str, char *charset)
 	output = (char **)malloc((n_sub + 1) * sizeof(char *));
 	if (!output)
 		return (0);
-	output[0] = NULL;
 	while (str[j])
 	{
 		if ((is_sep(str[j], charset) == 1) || (str[j + 1] == '\0'))

@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/18 11:00:02 by tsuchen           #+#    #+#             */
+/*   Updated: 2024/03/18 11:04:10 by tsuchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_count_if(char **tab, int length, int(*f)(char *))
+int	ft_count_if(char **tab, int length, int (*f)(char *))
 {
 	int	i;
 	int	count;
