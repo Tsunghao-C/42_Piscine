@@ -6,7 +6,7 @@
 /*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 09:03:38 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/03/20 19:34:59 by tsuchen          ###   ########.fr       */
+/*   Updated: 2024/05/06 19:45:54 by tsuchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ void	ft_print_3_digit(t_list *begin_dic, char *num, int *count)
 		ft_print_num_w(begin_dic, ((nbr / 10) * 10), 0, count);
 		nbr %= 10;
 		if (nbr != 0)
-			write(1, " -", 2);
+		{
+			write(1, "-", 1);
+			*count = 0;
+		}
 	}
 	if (nbr > 0)
 		ft_print_num_w(begin_dic, nbr, 0, count);

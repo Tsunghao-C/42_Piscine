@@ -7,4 +7,3 @@ winter piscine in Paris. That will includes:
 1. Shell
 2. C
 3. Rush (Group projects)
-4. BSQ (Special group project)
