@@ -6,7 +6,7 @@
 /*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:49:30 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/03/18 11:55:11 by tsuchen          ###   ########.fr       */
+/*   Updated: 2024/06/16 15:26:59 by tsuchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,15 @@
 void	btree_insert_data(t_btree **root, void *item, int
 (*cmpf)(void *, void *))
 {
-	void	*temp;
-
-	temp = item;
 	if (*root == NULL)
 	{
 		*root = btree_create_node(item);
 		return ;
 	}
 	if (cmpf(item, (*root)->item) < 0)
-	{
-		temp = (*root)->item;
-		(*root)->item = item;
-	}
-	if ((*root)->right)
-		btree_insert_data(&((*root)->right), temp, cmpf);
-	else if ((*root)->left && cmpf(temp, ((*root)->left)->item) >= 0)
-		btree_insert_data(&((*root)->right), temp, cmpf);
-	else
-		btree_insert_data(&((*root)->left), temp, cmpf);
+		btree_insert_data(&((*root)->left), item, cmpf);
+	else 
+		btree_insert_data(&((*root)->right), item, cmpf);
 }
 /*
 #include <stdio.h>
