@@ -6,12 +6,11 @@
 /*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:25:24 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/03/18 11:26:22 by tsuchen          ###   ########.fr       */
+/*   Updated: 2024/06/16 15:53:41 by tsuchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdio.h>
 
 void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
 {
@@ -21,18 +20,15 @@ void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
 	{
 		tmp = begin_list;
 		begin_list = begin_list->next;
-		free_fct(tmp);
+		free_fct(tmp->data);
 		free(tmp);
 	}
 }
 /*
+#include <stdio.h>
 void	free_data(void	*addr)
 {
-	t_list	*tmp;
-
-	tmp = (t_list *)(addr);
-	tmp->data = NULL;
-	tmp->next = NULL;
+	free(addr);
 }
 
 void	ft_list_push_back(t_list **begin_list, void *data);
