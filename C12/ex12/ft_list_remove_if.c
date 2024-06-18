@@ -6,12 +6,11 @@
 /*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:31:46 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/03/18 11:31:48 by tsuchen          ###   ########.fr       */
+/*   Updated: 2024/06/18 17:39:29 by tsuchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdio.h>
 
 t_list	*ft_list_find(t_list *begin_list, void *data_ref, int
 (*cmp)(void *, void *))
@@ -28,7 +27,7 @@ t_list	*ft_list_find(t_list *begin_list, void *data_ref, int
 	return (tmp);
 }
 
-t_list	*ft_list_remove_if(t_list **begin_list, void *data_ref, int
+void	ft_list_remove_if(t_list **begin_list, void *data_ref, int
 (*cmp)(void *, void *), void (*free_fct)(void *))
 {
 	t_list	*tmp;
@@ -50,9 +49,9 @@ t_list	*ft_list_remove_if(t_list **begin_list, void *data_ref, int
 		free(tmp);
 		tmp = ft_list_find(*begin_list, data_ref, cmp);
 	}
-	return (*begin_list);
 }
 /*
+#include <stdio.h>
 int	cmp_mod(void *lst_data, void *data_ref)
 {
 	int	l_nbr;

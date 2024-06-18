@@ -104,5 +104,4 @@ m -> set a marker (ex R) to a line to navigate, key 'R to locate.
 ':set nohlsearch' -> disable search HL
 ':set bg=dark/light' -> change foreground
 ':set tabstop=X' -> set tab equals to X spaces
-':colo <theme>' -> set a theme
 

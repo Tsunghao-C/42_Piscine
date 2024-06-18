@@ -6,12 +6,11 @@
 /*   By: tsuchen <tsuchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 11:24:25 by tsuchen           #+#    #+#             */
-/*   Updated: 2024/03/18 11:24:26 by tsuchen          ###   ########.fr       */
+/*   Updated: 2024/06/18 17:59:55 by tsuchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdio.h>
 
 t_list	*ft_list_push_strs(int size, char **strs)
 {
@@ -36,6 +35,7 @@ t_list	*ft_list_push_strs(int size, char **strs)
 	return (lst);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
 	char	*strs[7] = {"I", "am", "a", "list", "of", "strings", "!"};
@@ -50,6 +50,11 @@ int	main(void)
 		printf("list: %s\n", (char *)(tmp->data));
 		tmp = tmp->next;
 	}
-	free(str_list);
+	while (str_list)
+	{
+		tmp = str_list;
+		str_list = str_list->next;
+		free(tmp);
+	}
 	return (0);
 }*/
